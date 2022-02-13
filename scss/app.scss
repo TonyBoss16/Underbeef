@@ -1,0 +1,57 @@
+@import 'reset/_variables' , 'reset/_mixins' , 'reset/_reset' , 'reset/_keyframes';
+
+.wrapper {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    background-color: lightblue;
+}
+
+
+.header {
+
+    width: 100%;
+    background-color: lightgrey;
+
+    .wrapper {
+        @include flex (row, nowrap, space-between, center);
+    }
+
+    &__h1 {
+        background-color: aqua;
+    }
+    &__logo {}
+    &__img {}
+
+    &__nav {
+        background-color: blue;
+    }
+    &__ul {
+        background-color: chocolate;
+        @include flex (row, nowrap, center, center);
+    }
+    &__li {
+        background-color: orange;
+        margin: 0 1em;
+    }
+    &__a {}
+    
+    &__rrss {
+        background-color: pink;
+        @include flex (row, nowrap, center, center);
+    }
+    &__rs {
+        background-color: cornflowerblue;
+        margin: 0 1em;
+    }
+    &__a {}
+    &__svg {
+        width: 2em;
+        height: 2em;
+        background-color: cyan;
+    }
+    &__span {}
+}
+
+
+
