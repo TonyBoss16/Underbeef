@@ -47,8 +47,8 @@ body {
     font-size: 100%;
     line-height: 1.4em;
     min-height: 100vh;
-    background-color: var(--blanco);
-    color: var(--negro);
+    background: var(--negro) url(../../assets/bg.png);
+    color: var(--blanco);
     hyphens: auto;
     font-smooth: always;
     -webkit-font-smooth: always;

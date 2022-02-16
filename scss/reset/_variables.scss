@@ -1,0 +1,30 @@
+/* Aqui preparamos las custom properties */
+:root {
+    --negro             : #515151;
+    --blanco            : #ececec;
+    --azul              : #165cef;
+
+    --borde-banco       : #ffffff;
+    --borde-gris        : #606060;
+
+
+    /* Tipografia */
+    --tipo-principal    : 'Montserrat', sans-serif;
+    --tipo-title        : 'Bebas Neue', cursive;
+    --tipo-footer       : 'Redacted', cursive;
+
+    /* Tamaño Tipografia */
+    --size-title: 1.85em;
+}
+
+/* Las adaptamos al modo oscuro */
+// @media (prefers-color-scheme: dark) {
+//     :root{
+//         --negro             : #ececec;
+//         --blanco            : #515151;
+//         --azul              : #165cef;
+
+//         --borde-banco       : #606060;
+//         --borde-gris        : #ffffff;
+//     }
+// }

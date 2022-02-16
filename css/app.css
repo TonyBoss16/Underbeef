@@ -1,3 +1,20 @@
+@charset "UTF-8";
+/* Aqui preparamos las custom properties */
+:root {
+  --negro: #515151;
+  --blanco: #ececec;
+  --azul: #165cef;
+  --borde-banco: #ffffff;
+  --borde-gris: #606060;
+  /* Tipografia */
+  --tipo-principal: "Montserrat", sans-serif;
+  --tipo-title: "Bebas Neue", cursive;
+  --tipo-footer: "Redacted", cursive;
+  /* Tamaño Tipografia */
+  --size-title: 1.85em;
+}
+
+/* Las adaptamos al modo oscuro */
 * {
   margin: 0;
   padding: 0;
@@ -57,8 +74,8 @@ body {
   font-size: 100%;
   line-height: 1.4em;
   min-height: 100vh;
-  background-color: var(--blanco);
-  color: var(--negro);
+  background: var(--negro) url(../../assets/bg.png);
+  color: var(--blanco);
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
@@ -75,6 +92,7 @@ body {
 
 .header {
   width: 100%;
+  font-size: var(--size-title);
 }
 .header .wrapper {
   display: -webkit-box;
@@ -82,10 +100,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -93,16 +109,17 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+.header__nav {
+  font-family: var(--tipo-title);
+}
 .header__ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -119,10 +136,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -142,14 +157,26 @@ body {
   padding: 3.1rem 0;
   background: radial-gradient(49.74% 186.57% at 49.74% 46.1%, rgba(22, 92, 239, 0.42) 53.65%, rgba(29, 94, 232, 0) 100%);
 }
+.ppal__h3 {
+  font-family: var(--tipo-title);
+  font-size: var(--size-title);
+}
+.ppal__h2 {
+  font-family: var(--tipo-title);
+  font-size: var(--size-title);
+}
 .ppal__iframe {
   width: 100%;
   min-height: 35vw;
 }
 .ppal__button {
+  background: var(--azul);
   border-radius: 2em;
   margin: auto;
   padding: 1em 2em;
+  color: var(--blanco);
+  font-family: var(--size-title);
+  font-size: var(--size-title);
 }
 
 .extras {
@@ -159,10 +186,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -176,6 +201,7 @@ body {
 }
 .extras__h2 {
   margin: 0 0 1.75rem;
+  font-family: var(--tipo-title);
 }
 .extras__p {
   margin: 0 0 2.56rem;
@@ -186,10 +212,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -208,10 +232,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -226,10 +248,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -246,10 +266,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -266,4 +284,10 @@ body {
 }
 .footer__span {
   display: none;
+}
+.footer__extra {
+  font-family: var(--tipo-footer);
+}
+.footer__extra.active {
+  font-family: var(--tipo-principal);
 }

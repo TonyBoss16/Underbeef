@@ -10,7 +10,7 @@
 .header {
 
     width: 100%;
-    
+    font-size: var(--size-title);
 
     .wrapper {
         @include flex (row, nowrap, space-between, center);
@@ -20,7 +20,9 @@
     &__logo {}
     &__img {}
 
-    &__nav {}
+    &__nav {
+        font-family: var(--tipo-title);
+    }
     &__ul {
         @include flex (row, nowrap, center, center);
     }
@@ -53,16 +55,27 @@
                                 rgba(22, 92, 239, 0.42) 53.65%, 
                                 rgba(29, 94, 232, 0) 100%);
 
-    &__h3 {}
-    &__h2 {}
+    &__h3 {
+        font-family: var(--tipo-title);
+        font-size: var(--size-title);
+    }
+    &__h2 {
+        font-family: var(--tipo-title);
+        font-size: var(--size-title);
+    }
     &__iframe {
         width: 100%;
         min-height: 35vw;
     }
     &__button {
+        background: var(--azul);
         border-radius: 2em;
         margin: auto;
-        padding: 1em 2em;        
+        padding: 1em 2em;
+        
+        color: var(--blanco);
+        font-family: var(--size-title);
+        font-size: var(--size-title);    
     }
 }
 
@@ -76,6 +89,7 @@
     }
     &__h2 {
         margin: 0 0 1.75rem;
+        font-family: var(--tipo-title);
     }
     &__p {
         margin: 0 0 2.56rem;
@@ -125,5 +139,13 @@
     }
     &__span {
         display: none;
+    }
+
+    &__extra {
+        font-family: var(--tipo-footer);
+
+        &.active {
+            font-family: var(--tipo-principal);
+        }
     }
 }

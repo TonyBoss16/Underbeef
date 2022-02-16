@@ -1,8 +1,11 @@
 
-@mixin flex ($direction, $wrap, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    flex-wrap: $wrap;
+@mixin flex ($direction , $corte , $justify , $align , $dis:flex) {
+    display: $dis;
+    flex-flow: $direction $corte;
     justify-content: $justify;
     align-items: $align;
+}
+@mixin grid ($columnas , $espacio) {
+    display                 : grid;
+    grid-template-columns   : repeat($columnas , 1fr );
 }
