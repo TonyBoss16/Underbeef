@@ -13,13 +13,21 @@
     padding: 1.4em 0;
     font-size: var(--size-title);
 
+    @include mv() {
+        padding: 1em 0;
+    }
+
     .wrapper {
         @include flex (row, nowrap, space-between, center);
+
+        @include mv() {
+            flex-direction: column;
+        }
     }
 
     &__h1 {}
     &__logo {
-        max-width: 5em;
+        max-width: 7em;
     }
     &__img {}
 
@@ -28,6 +36,14 @@
         font-family: var(--tipo-title);
         border-left: 1px solid var(--borde-rgba);
         border-right: 1px solid var(--borde-rgba);
+
+        @include mv() {
+            margin: 1em 0;
+            display: none;
+            &.activo {
+                display: flex;
+            }
+        }
     }
     &__ul {
         @include flex (row, nowrap, center, center);
@@ -35,10 +51,26 @@
     &__li {
         margin: 0 1em;
     }
-    &__a {}
+    &__a {
+        border-bottom: .2em solid transparent;
+        transition: all .5s ease;
+        &:hover {
+            border-bottom: .2em solid var(--borde-rgba);
+        }
+        &.activo {
+            border-bottom: .2em solid var(--azul);
+        }
+    }
     
     &__rrss {
         @include flex (row, nowrap, center, center);
+
+        @include mv() {
+            display: none;
+            &.activo {
+                display: flex;
+            }
+        }
     }
     &__rs {
         margin: 0 .5em;
@@ -70,13 +102,13 @@
     &__h3 {
         font-family: var(--tipo-title);
         font-size: var(--size-h3);
-        line-height: .4em;
+        line-height: .85em;
         opacity: 0.6;
     }
     &__h2 {
         font-family: var(--tipo-title);
         font-size: var(--size-h2);
-        // line-height: .9em;
+        line-height: .85em;
     }
     &__iframe {
         width: 100%;
@@ -107,7 +139,7 @@
     }
 
     &_col {
-        flex-basis: 49%;
+        flex-basis: 45%;
 
         @include mv() {
             margin: 2em 0;
@@ -171,6 +203,7 @@
     }
     &__title {}
     &__ul {
+        margin: 1em 0 0;
         @include flex (row, nowrap, flex-start, center);
     }
     &__li {
@@ -178,8 +211,8 @@
     }
     &__a {}
     &__svg {
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 1.4rem;
+        height: 1.4rem;
     }
     &__span {
         display: none;
