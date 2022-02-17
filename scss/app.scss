@@ -4,6 +4,10 @@
     width: 90%;
     max-width: 1300px;
     margin: auto;
+
+    @include mv(480px) {
+        padding: 0 2em;
+    }
 }
 
 
@@ -104,15 +108,32 @@
         font-size: var(--size-h3);
         line-height: .85em;
         opacity: 0.6;
+
+        @include mv () {
+            font-size: 1.5em;
+        }
+        
     }
     &__h2 {
         font-family: var(--tipo-title);
         font-size: var(--size-h2);
         line-height: .85em;
+
+        @include mv () {
+            margin: 0 0 .3em;
+            font-size: 2em;
+        }
     }
     &__iframe {
         width: 100%;
         min-height: 28vw;
+
+        @include mv () {
+            min-height: 50vw;
+        }
+        @include mv (480px) {
+            min-height: 60vw;
+        }
     }
     &__button {
         background: var(--azul);
@@ -142,7 +163,7 @@
         flex-basis: 45%;
 
         @include mv() {
-            margin: 2em 0;
+            width: 70%;
         }
     }
     &__h2 {
@@ -155,14 +176,26 @@
     }
     &__ul {
         @include flex (row, nowrap, space-between, center);
+
+        @include mv(480px) {
+            flex-direction: column;
+        }
     }
     &__li {
         flex-basis: 30%;
+
+        @include mv(480px) {
+            flex-basis: 70%;
+            margin: 0 0 2rem;
+        }
     }
     &__a {}
     &__img {
         // min-height: 10rem;
         border-radius: 50%;
+    }
+    &__liga {
+        border-radius: 1rem;
     }
 } 
 
@@ -187,11 +220,20 @@
     }
     &__dl {
         margin: 0 1em;
+
+        @include mv() {
+            margin: 2em 0;
+        }
     }
     &__dt {
         font-weight: 600;
     }
     &__dd {
+
+        @include mv(480px) {
+            margin: 0 0 .7em;
+        }
+
         &::before {
             content: '👉';
             margin: 0 .5em 0 0;
@@ -205,6 +247,10 @@
     &__ul {
         margin: 1em 0 0;
         @include flex (row, nowrap, flex-start, center);
+
+        @include mv() {
+            justify-content: center;
+        }
     }
     &__li {
         margin: 0 1rem 0 0;
