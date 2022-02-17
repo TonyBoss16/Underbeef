@@ -1,11 +1,28 @@
+@mixin tfix() {
+    transform: perspective(1px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
 
-@mixin flex ($direction , $corte , $justify , $align , $dis:flex) {
-    display: $dis;
+// Esto automatiza el flex
+@mixin flex ($direction , $corte , $justify , $align) {
+    display: flex;
     flex-flow: $direction $corte;
     justify-content: $justify;
-    align-items: $align;
+    @if $corte == 'nowrap' {
+        align-items: $align;
+    }@else {
+        align-content: $align;
+    }
 }
+// Este mixin optimiza grid
 @mixin grid ($columnas , $espacio) {
     display                 : grid;
     grid-template-columns   : repeat($columnas , 1fr );
+}
+// mixin para responsive
+@mixin mv ($size : 900px) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
 }
