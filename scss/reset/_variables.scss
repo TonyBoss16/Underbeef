@@ -5,6 +5,7 @@
     --azul              : #165cef;
 
     --borde-banco       : #ffffff;
+    --borde-rgba        : rgba(255, 255, 255, 0.2);
     --borde-gris        : #606060;
 
 
@@ -14,7 +15,9 @@
     --tipo-footer       : 'Redacted', cursive;
 
     /* Tamaño Tipografia */
-    --size-title: 1.85em;
+    --size-title: 1.85rem;
+    --size-h2: 4.3rem;
+    --size-h3: 2.5rem;
 }
 
 /* Las adaptamos al modo oscuro */

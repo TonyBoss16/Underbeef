@@ -10,6 +10,7 @@
 .header {
 
     width: 100%;
+    padding: 1.4em 0;
     font-size: var(--size-title);
 
     .wrapper {
@@ -17,11 +18,16 @@
     }
 
     &__h1 {}
-    &__logo {}
+    &__logo {
+        max-width: 5em;
+    }
     &__img {}
 
     &__nav {
+        flex-basis: 50%;
         font-family: var(--tipo-title);
+        border-left: 1px solid var(--borde-rgba);
+        border-right: 1px solid var(--borde-rgba);
     }
     &__ul {
         @include flex (row, nowrap, center, center);
@@ -35,14 +41,16 @@
         @include flex (row, nowrap, center, center);
     }
     &__rs {
-        margin: 0 1em;
+        margin: 0 .5em;
     }
     &__a {}
     &__svg {
-        width: 2em;
-        height: 2em;   
+        width: .75em;
+        height: .75em;   
     }
-    &__span {}
+    &__span {
+        display: none;
+    }
 }
 
 
@@ -55,32 +63,42 @@
                                 rgba(22, 92, 239, 0.42) 53.65%, 
                                 rgba(29, 94, 232, 0) 100%);
 
+    .wrapper {
+        max-width: 950px;
+    }
+
     &__h3 {
         font-family: var(--tipo-title);
-        font-size: var(--size-title);
+        font-size: var(--size-h3);
+        line-height: .4em;
+        opacity: 0.6;
     }
     &__h2 {
         font-family: var(--tipo-title);
-        font-size: var(--size-title);
+        font-size: var(--size-h2);
+        // line-height: .9em;
     }
     &__iframe {
         width: 100%;
-        min-height: 35vw;
+        min-height: 28vw;
     }
     &__button {
         background: var(--azul);
         border-radius: 2em;
-        margin: auto;
-        padding: 1em 2em;
+        margin: 1em auto 0;
+        padding: .8rem 1.4em .7rem;
         
         color: var(--blanco);
         font-family: var(--size-title);
-        font-size: var(--size-title);    
+        font-size: 1em;
+
+        text-transform: uppercase;
+
+        cursor: pointer;
     }
 }
 
 .extras {
-    
     padding: 5rem 0;
     @include flex (row, nowrap, space-between, center);
 
@@ -90,6 +108,7 @@
     &__h2 {
         margin: 0 0 1.75rem;
         font-family: var(--tipo-title);
+        font-size: var(--size-title);
     }
     &__p {
         margin: 0 0 2.56rem;
@@ -97,10 +116,12 @@
     &__ul {
         @include flex (row, nowrap, space-between, center);
     }
-    &__li {}
+    &__li {
+        flex-basis: 30%;
+    }
     &__a {}
     &__img {
-        min-height: 10rem;
+        // min-height: 10rem;
         border-radius: 50%;
     }
 } 
@@ -112,19 +133,30 @@
     }
 
     &__row {
-        padding: 2rem 0;
+        padding: 1.2rem 0;
         @include flex (row, nowrap, center, center);
     }
     &__h2 {}
     &__a {}
-    &__img {}
+    &__img {
+        max-width: 13em;
+    }
     &__dl {
         margin: 0 1em;
     }
-    &__dt {}
-    &__dd {}
+    &__dt {
+        font-weight: 600;
+    }
+    &__dd {
+        &::before {
+            content: '👉';
+            margin: 0 .5em 0 0;
+        }
+    }
 
-    &__autor {}
+    &__autor {
+        font-weight: 600;
+    }
     &__title {}
     &__ul {
         @include flex (row, nowrap, flex-start, center);
