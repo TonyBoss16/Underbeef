@@ -289,6 +289,13 @@ body {
 .header__rs {
   margin: 0 0.5em;
 }
+.header__enlace {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.header__enlace:hover {
+  opacity: 0.7;
+}
 .header__svg {
   width: 0.75em;
   height: 0.75em;
@@ -351,6 +358,20 @@ body {
   font-size: 1em;
   text-transform: uppercase;
   cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.ppal__button:hover {
+  color: var(--azul);
+  background: var(--blanco);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+.ppal__button:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .extras {

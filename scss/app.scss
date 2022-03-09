@@ -79,7 +79,13 @@
     &__rs {
         margin: 0 .5em;
     }
-    &__a {}
+    &__enlace {
+        transition: .3s ease;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
     &__svg {
         width: .75em;
         height: .75em;   
@@ -148,6 +154,17 @@
         text-transform: uppercase;
 
         cursor: pointer;
+        transition: .5s ease;
+        transform: scale(1);
+
+        &:hover {
+            color: var(--azul);
+            background: var(--blanco);
+            transform: scale(.95);
+        }
+        &:active {
+            transform: scale(1);
+        }
     }
 }
 
