@@ -206,10 +206,42 @@
             margin: 0 0 2rem;
         }
     }
-    &__a {}
-    &__img {
-        // min-height: 10rem;
+    &__frestyler {
+        position: relative;
+        overflow: hidden;
         border-radius: 50%;
+    }&__frestyler:hover {
+        .extras__overlay {
+            opacity: 1;
+        }
+        .extras__img {
+            transform: scale(1.1);
+        }
+    } 
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        background: var(--blanco);
+        border: .2em solid var(--azul);
+        border-radius: 50%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include flex(row, nowrap, center, center);
+        font-family: var(--tipo-title);
+        font-size: 2.5rem;
+        color: var(--azul);
+
+        transition: all .5s ease;
+        opacity: 0;
+    }
+    &__nombre {}
+    &__img {
+        transition: all .5s ease;
+        border-radius: 50%;
+        transform: scale(1);
     }
     &__liga {
         border-radius: 1rem;
