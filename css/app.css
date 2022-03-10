@@ -453,6 +453,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+  will-change: transform;
 }
 .extras__frestyler:hover .extras__overlay {
   opacity: 1;
@@ -484,21 +485,46 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-family: var(--tipo-title);
-  font-size: 2.5rem;
+  font-size: 1.5em;
   color: var(--azul);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   opacity: 0;
 }
 .extras__img {
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   border-radius: 50%;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 .extras__liga {
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.extras__a {
+  position: relative;
+  overflow: hidden;
   border-radius: 1rem;
+  will-change: transform;
+}
+.extras__a .extras__overlay {
+  border-radius: 0;
+}
+.extras__a:hover .extras__overlay {
+  opacity: 1;
+}
+.extras__a:hover .extras__liga {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .footer .wrapper {
@@ -600,6 +626,7 @@ body {
   display: none;
 }
 .footer__extra {
+  cursor: pointer;
   font-family: var(--tipo-footer);
 }
 .footer__extra.active {

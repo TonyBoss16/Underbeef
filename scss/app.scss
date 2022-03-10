@@ -232,21 +232,43 @@
 
         @include flex(row, nowrap, center, center);
         font-family: var(--tipo-title);
-        font-size: 2.5rem;
+        font-size: 1.5em;
         color: var(--azul);
 
-        transition: all .5s ease;
+        transition: transform .5s ease;
         opacity: 0;
     }
     &__nombre {}
     &__img {
-        transition: all .5s ease;
+        transition: transform .5s ease;
         border-radius: 50%;
         transform: scale(1);
     }
     &__liga {
-        border-radius: 1rem;
+        // border-radius: 1rem;
+        transition: transform .5s ease;
+        // border-radius: 50%;
+        transform: scale(1);
     }
+    &__a {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        will-change: transform;
+
+        .extras__overlay {
+            border-radius: 0;
+        }
+    }
+    &__a:hover {
+        .extras__overlay {
+            opacity: 1;
+        }
+        .extras__liga {
+            transform: scale(1.1);
+        }
+    }
+
 } 
 
 .footer {
@@ -315,6 +337,8 @@
     }
 
     &__extra {
+        cursor: pointer;
+        
         font-family: var(--tipo-footer);
 
         &.active {
