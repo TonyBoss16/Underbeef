@@ -22,27 +22,46 @@
     }
 
     .wrapper {
-        @include flex (row, nowrap, space-between, center);
-
-        @include mv() {
-            flex-direction: column;
-        }
+        @include flex (row, wrap, space-between, center);
     }
 
-    &__h1 {}
+    &__h1 {
+        @include mv() {
+            flex-basis: 50%;
+        }
+    }
     &__logo {
         max-width: 7em;
     }
     &__img {}
+    &__btn {
+        width: 1.5rem;
+        height: 1.5rem;
+        @include flex(row, nowrap, center, center);
+        display: none;
+
+        @include mv() {
+            display: flex;
+        }
+    }
+    &__movil {
+        width: 2rem;
+        height: 2rem;
+        // background-color: red;
+    }
 
     &__nav {
         flex-basis: 50%;
         font-family: var(--tipo-title);
         border-left: 1px solid var(--borde-rgba);
         border-right: 1px solid var(--borde-rgba);
+        @include flex(row, nowrap, center, center);
 
         @include mv() {
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
             margin: 1em 0;
+            font-size: .8em;
             display: none;
             &.activo {
                 display: flex;
@@ -70,6 +89,7 @@
         @include flex (row, nowrap, center, center);
 
         @include mv() {
+            margin: auto;
             display: none;
             &.activo {
                 display: flex;
